@@ -1,4 +1,4 @@
-fetch-files
+Apigee Fetch Files
 =========
 
 This is a helper role that is used to download a set of files from an arbitrary set of remote servers. 
@@ -10,25 +10,26 @@ Requirements
 
 This role expects a collection that defines the directory and file name pattern to search. This role uses the linux 
 find command so any directory naming convention and file naming pattern useful with find can be provided.  
+ 
+The installation of Apigee OPDK requires root access. Credentials must also be supplied to override the empty placeholders
+provided here. It is recommended that credentials be consolidated into a single credentials.yml file that can be stored 
+separately. It is assumed that files containing credentials are stored in the ~/.apigee folder. 
 
 
 Role Variables
 --------------
 
-fetched_files_dir: This variable defines the local location where fetched files will stored. 
-
-fetched_files: This variable is the name of the collection that contains the directory and file name pattern to 
-search.  Each item in this collection contain the attributes dir and name.
+Default values for variables are provided by the role opdk-setup-default-settings.
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+This role depends on the following roles:
+
+* opdk-setup-default-settings
 
 Example Playbook
 ----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
     - hosts: servers
       vars: 
@@ -42,9 +43,9 @@ Including an example of how to use your role (for instance, with variables passe
 License
 -------
 
-MIT 
+Apache License Version 2.0, January 2004
 
 Author Information
 ------------------
 
-The author of this role is Carlos Frias <cfrias@apigee.com>. 
+Carlos Frias
