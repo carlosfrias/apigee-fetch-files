@@ -2,11 +2,11 @@
 # tasks file for fetch-found-files
 
 - name: Use find to search for files to download
+  ignore_errors: yes
   shell: "find {{ item.dir }} -type f -name '{{ item.name }}'"
   register: logs
   with_items:
   - '{{ fetch_files }}'
-  ignore_errors: yes
 
 - include: fetch_files.yml
   with_items:

@@ -21,6 +21,19 @@ Role Variables
 
 Default values for variables are provided by the role opdk-setup-default-settings.
 
+This role expects a collection of key value pairs consisting of directory and file names which will be passed into the 
+`find` command. The expected key attributes are `dir:` and `name:` such that the defining a collection for apigee logs 
+assigned to the `apigee_log_files` would look like this:
+ 
+    apigee_log_files:
+      - { dir: '{{ opdk_installer_path }}/', name: '*.log' }
+      - { dir: '{{ opdk_installer_path }}/var/log/', name: '*.log' }
+      
+The name of variable to reference your collection of key value pairs.
+
+    fetch_files: '{{ apigee_log_files }}'
+
+
 Dependencies
 ------------
 
@@ -31,14 +44,13 @@ This role depends on the following roles:
 Example Playbook
 ----------------
 
-    - hosts: servers
-      vars: 
-        fetched_files_dir: configs_and_logs
-        fetched_files:
-        - { dir: '/opt/apigee/var/log', name: '*.log' }
-        - { dir: '/etc/', name: 'hosts' }
-      roles:
-         - fetch-files
+      - hosts: planet
+        vars:
+          apigee_log_files:
+            - { dir: '{{ opdk_installer_path }}/', name: '*.log' }
+            - { dir: '{{ opdk_installer_path }}/var/log/', name: '*.log' }
+        roles:
+        - { role: fetch-files, fetch_files: '{{ apigee_log_files }}' }         
 
 License
 -------
