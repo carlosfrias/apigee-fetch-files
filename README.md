@@ -19,7 +19,7 @@ separately. It is assumed that files containing credentials are stored in the ~/
 Role Variables
 --------------
 
-Default values for variables are provided by the role opdk-setup-default-settings.
+Default values for variables are provided by the role apigee-opdk-setup-default-settings.
 
 This role expects a collection of key value pairs consisting of directory and file names which will be passed into the 
 `find` command. The expected key attributes are `dir:` and `name:` such that the defining a collection for apigee logs 
@@ -39,7 +39,7 @@ Dependencies
 
 This role depends on the following roles:
 
-* opdk-setup-default-settings
+* apigee-opdk-setup-default-settings
 
 Example Playbook
 ----------------
