@@ -1,6 +1,10 @@
 ---
 # tasks file for fetch-found-files
 
+- name: Listing of fetch_files
+  debug:
+    var: fetcH_files
+
 - name: Use find to search for files to download
   shell: "find {{ item.dir }} -type f -name '{{ item.name }}'"
   register: logs
