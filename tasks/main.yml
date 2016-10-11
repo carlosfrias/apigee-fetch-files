@@ -13,11 +13,11 @@
 
 - name: Fetch_files found for downloading
   debug:
-    var: logs.results.stdout_lines
+    var: logs.results
 
 - include: fetch_files.yml
   with_items:
-  - '{{ logs.results.stdout_lines }}'
+  - '{{ logs.results }}'
   loop_control:
     loop_var: result
 
