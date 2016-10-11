@@ -1,7 +1,7 @@
 ---
 # tasks file for fetch-found-files
 
-- name: Listing of fetch_files
+- name: Listing of fetch_files criteria
   debug:
     var: fetch_files
 
@@ -11,9 +11,9 @@
   with_items: '{{ fetch_files }}'
   ignore_errors: yes
 
-- name: Find listing of file to download
+- name: Fetch_files found for downloading
   debug:
-    var: logs.stdout_lines
+    var: logs.results
 
 - include: fetch_files.yml
   with_items:
