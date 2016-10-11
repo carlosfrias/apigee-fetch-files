@@ -5,7 +5,7 @@
     src: "{{ item }}"
     dest: '{{ fetched_files_dir }}'
   with_items:
-  - "{{ result.stdout_lines }}"
+  - "{{ result }}"
   register: fetch_status
 
 - name: Fetch status report
