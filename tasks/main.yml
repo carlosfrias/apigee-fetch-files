@@ -11,6 +11,10 @@
   with_items: '{{ fetch_files }}'
   ignore_errors: yes
 
+- name: Find listing of file to download
+  debug:
+    var: logs.stdout_lines
+
 - include: fetch_files.yml
   with_items:
   - '{{ logs.results }}'
