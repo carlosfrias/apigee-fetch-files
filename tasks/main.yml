@@ -20,4 +20,5 @@
   - '{{ logs.results }}'
   loop_control:
     loop_var: result
+  when: logs is defined
 
