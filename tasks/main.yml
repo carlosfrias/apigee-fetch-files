@@ -16,6 +16,7 @@
     var: logs.results
 
 - include: fetch_files.yml
+  ignore_errors: yes
   with_items:
   - '{{ logs.results }}'
   loop_control:
