@@ -23,7 +23,7 @@
   with_items: "{{ download_pattern }}"
 
 - name: Iterate over patterns found
-  include: download_patterns.yml
+  include: download_files.yml
   loop_control:
     loop_var: result_files
   with_items: '{{ downloads.results }}'
