@@ -2,12 +2,12 @@
 # tasks file for fetch-found-files
 - name: Validate that we a download_folder
   fail:
-    msg: Please specify a local download folder: -e download_folder=<local download folder>
+    msg: "Please specify a local download folder: -e download_folder=<local download folder>"
   when: download_folder is not defined
 
 - name: Validate that we have download_patterns
   fail:
-    msg: Please provide a download pattern that follows: - { dir: 'directory name', pattern: 'file pattern' }
+    msg: "Please provide a download pattern that follows: - { dir: 'directory name', pattern: 'file pattern' }"
   when: download_patterns is not defined
 
 - name: Create download folder
