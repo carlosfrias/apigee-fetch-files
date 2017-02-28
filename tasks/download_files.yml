@@ -1,4 +1,9 @@
 ---
+- name: Validate that we a download_folder
+  fail:
+    msg: "Please specify a local download folder: -e download_folder=<local download folder>"
+  when: download_folder is not defined
+
 - name: Download files
   fetch:
     src: "{{ item.path }}"
