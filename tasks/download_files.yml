@@ -1,0 +1,7 @@
+---
+- name: Download files
+  fetch:
+    src: "{{ item.path }}"
+    dest: "{{ download_folder }}"
+  with_items: "{{ result_files.files }}"
+
