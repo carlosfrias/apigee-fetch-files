@@ -22,3 +22,4 @@
   loop_control:
     loop_var: result_files
   with_items: '{{ downloads.results }}'
+  when: downloads is defined
