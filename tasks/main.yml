@@ -19,7 +19,7 @@
 
 - name: Store results
   set_fact:
-    results: downloads.results
+    results: "{{ downloads.results }}"
 
 - name: Download log files found
   debug:
