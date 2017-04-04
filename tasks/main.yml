@@ -28,7 +28,7 @@
 - name: Iterate over download.results
   debug:
     var: "{{ item }}"
-  with_items: downloads.results
+  with_items: "{{ downloads.results }}"
 
 #- name: Iterate over patterns found
 #  include: download_files.yml
