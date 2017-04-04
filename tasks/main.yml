@@ -17,6 +17,10 @@
   register: downloads
   with_items: "{{ download_pattern }}"
 
+- name: Download log files found
+  debug:
+    var: download_pattern
+
 - name: Iterate over patterns found
   include: download_files.yml
   loop_control:
