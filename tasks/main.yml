@@ -21,9 +21,9 @@
   set_fact:
     results: "{{ downloads.results }}"
 
-- name: Download log files found
+- name: Echo results
   debug:
-    var: "{{ results.files[0].path }}"
+    var: "{{ results.files[0] }}"
 
 - name: Iterate over patterns found
   include: download_files.yml
