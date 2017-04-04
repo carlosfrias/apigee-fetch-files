@@ -21,17 +21,19 @@
   debug:
     var: downloads
 
-- name: Download.results log files found
-  debug:
-    var: downloads.results
+#- name: Download.results log files found
+#  debug:
+#    var: downloads.results
 
-- name: Iterate over download.results
-  debug:
-    var: "{{ item }}"
-  with_items: "{{ downloads.results[0].files[0] }}"
+#- name: Iterate over download.results
+#  debug:
+#    var: "{{ item }}"
+#  with_items: "{{ downloads.results[0].files[0] }}"
 
 #- name: Iterate over patterns found
 #  include: download_files.yml
 #  loop_control:
 #    loop_var: result
 #  with_items: '{{ downloads.results }}'
+
+
