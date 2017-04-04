@@ -23,7 +23,7 @@
 
 - name: Download log files found
   debug:
-    var: results.files[0].path
+    var: "{{ results.files[0].path }}"
 
 - name: Iterate over patterns found
   include: download_files.yml
