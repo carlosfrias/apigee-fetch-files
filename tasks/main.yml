@@ -21,6 +21,10 @@
   debug:
     var: downloads
 
+- name: Download.results log files found
+  debug:
+    var: downloads.results
+
 - name: Iterate over patterns found
   include: download_files.yml
   loop_control:
