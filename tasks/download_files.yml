@@ -4,19 +4,9 @@
     msg: "Please specify a local download folder: -e download_folder=<local download folder>"
   when: download_folder is not defined
 
-#- name: Result variable report
-#  debug:
-#    var: result
-#
-#- name: Result.files variable report
-#  debug:
-#    var: result.files
-
 - name: Download files
   fetch:
     src: "{{ item.path }}"
     dest: "{{ download_folder }}"
   with_items: "{{ result.files }}"
-  loop_control:
-    label: "{{ item.path }}"
 

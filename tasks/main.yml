@@ -17,17 +17,9 @@
   with_items: "{{ download_pattern }}"
   register: downloads
 
-- name: Store results
-  set_fact:
-    results: "{{ downloads.results }}"
-
-- name: Echo results
-  debug:
-    var: results[0].files[0].path
-
 - name: Iterate over patterns found
   include: download_files.yml
-  with_items: '{{ results }}'
+  with_items: '{{ downloads.results }}'
   loop_control:
     loop_var: result
 
