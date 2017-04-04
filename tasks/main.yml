@@ -17,14 +17,18 @@
   with_items: "{{ download_pattern }}"
   register: downloads
 
+- name: Store results
+  set_fact:
+    results: downloads.results
+
 - name: Download log files found
   debug:
-    var: downloads
+    var: results
 
 - name: Iterate over patterns found
   include: download_files.yml
   loop_control:
     loop_var: result
-  with_items: '{{ downloads.results }}'
+  with_items: '{{ results }}'
 
 
