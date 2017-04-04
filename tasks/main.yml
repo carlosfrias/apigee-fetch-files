@@ -23,7 +23,7 @@
 
 - name: Echo results
   debug:
-    var: "{{ results[0].files[0] }}"
+    var: results[0].files[0]
 
 - name: Iterate over patterns found
   include: download_files.yml
