@@ -23,12 +23,12 @@
 
 - name: Echo results
   debug:
-    var: results[0].files[0]
+    var: results[0].files[0].path
 
 - name: Iterate over patterns found
   include: download_files.yml
+  with_items: '{{ results }}'
   loop_control:
     loop_var: result
-  with_items: '{{ results }}'
 
 
