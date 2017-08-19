@@ -5,9 +5,8 @@
   when: download_folder is not defined
 
 - name: Download files
-  fetch:
-    src: "{{ item.path }}"
-    dest: "{{ download_folder }}"
+  include: download_file.yml
   with_items: "{{ result.files }}"
-  when: result is defined and result.files is defined
+  loop_control:
+    loop_var: file
 

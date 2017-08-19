@@ -5,8 +5,9 @@
     msg: "Please provide a download_pattern list that follows dir: 'directory name', pattern: 'file pattern'"
   when: download_pattern is not defined
 
-#- name: Create download folder
-#  local_action: file path={{ download_folder }} state=directory
+- name: Create download folder
+  become: no
+  local_action: file path={{ download_folder }} state=directory
 
 - name: Find download log files
   find:
@@ -16,6 +17,8 @@
     recurse: yes
   with_items: "{{ download_pattern }}"
   register: downloads
+
+
 
 - name: Iterate over patterns found
   include: download_files.yml
