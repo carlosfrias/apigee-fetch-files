@@ -9,4 +9,5 @@
   with_items: "{{ result.files }}"
   loop_control:
     loop_var: file
+  when: result.matched > 0
 
