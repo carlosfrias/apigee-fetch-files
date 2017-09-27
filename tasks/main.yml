@@ -24,7 +24,7 @@
   with_items: "{{ downloads.results }}"
 
 - name: Iterate over files found
-  include: download_files.yml
+  include: ./download_files.yml
   vars:
     download_set: "{{ item[1] }}"
   with_nested:
