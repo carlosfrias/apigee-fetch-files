@@ -20,7 +20,7 @@
 
 - name: Examine downloads.results collection assembled
   debug:
-    msg: "Showing result: {{ item }}"
+    msg: "Showing result: {{ item.files }}"
   with_items: "{{ downloads.results }}"
 
 #- name: Iterate over patterns found
