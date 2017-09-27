@@ -24,7 +24,7 @@
   with_items: "{{ downloads.results }}"
 
 - name: Iterate over files found
-  include_tasks: download_files.yml
+  include: download_files.yml
   with_items: downloads.results
   loop_control:
     loop_var: download_set
