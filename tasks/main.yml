@@ -25,11 +25,7 @@
 
 - name: Include echo.yml
   include: echo.yml
-
-#- name: Iterate over files found
-#  include: ./download_files.yml
-#  vars:
-#    download_set: "{{ item[1] }}"
-#  with_nested:
-#  - downloads.results
-#  - item[0].files
+  vars:
+    download_set: "{{ item }}"
+  with_nested:
+  - downloads.results
