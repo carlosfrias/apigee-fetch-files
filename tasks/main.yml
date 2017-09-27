@@ -23,10 +23,10 @@
     msg: "Count Files Matched: {{ item.matched }}"
   with_items: "{{ downloads.results }}"
 
-- name: Iterate over files found
-  include: ./download_files.yml
-  vars:
-    download_set: "{{ item[1] }}"
-  with_nested:
-  - downloads.results
-  - item[0].files
+#- name: Iterate over files found
+#  include: ./download_files.yml
+#  vars:
+#    download_set: "{{ item[1] }}"
+#  with_nested:
+#  - downloads.results
+#  - item[0].files
