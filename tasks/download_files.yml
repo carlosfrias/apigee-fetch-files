@@ -8,6 +8,6 @@
   fetch:
     src: "{{ item.path }}"
     dest: "{{ download_folder }}"
-  with_items: "{{ result.files }}"
-  when: result is defined and result.files is defined
+  with_items: "{{ files }}"
+  when: files is defined
 

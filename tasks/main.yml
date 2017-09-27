@@ -19,8 +19,8 @@
 
 - name: Iterate over patterns found
   include: download_files.yml
-  with_items: downloads.results
+  with_items: downloads.files
   loop_control:
-    loop_var: result
+    loop_var: files
 
 
