@@ -12,4 +12,4 @@
   fetch:
     src: "{{ item.path }}"
     dest: "{{ download_folder }}"
-  with_items: file_result.files
+  with_items: "{{ file_result.files }}"
