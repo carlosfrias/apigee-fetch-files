@@ -25,7 +25,7 @@
 - name: Iterate over patterns found
   include: download_files.yml
   var:
-    result: "{{ item }}
+    result: "{{ item }}"
   with_items: "{{ downloads.results }}"
 
 
