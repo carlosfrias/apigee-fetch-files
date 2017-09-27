@@ -18,7 +18,7 @@
   with_items: "{{ download_pattern }}"
   register: downloads
 
-- name: Examine downloads.results collection assembled
+- name: Examine downloads collection assembled
   debug:
     msg: "Showing files result: {{ item.files }}"
   with_items: "{{ downloads.results }}"
@@ -26,5 +26,7 @@
 - name: Iterate over files found
   include: download_files.yml
   vars:
-    download_set: "{{ item }}"
-  with_items: "{{ downloads }}"
+    download_set: "{{ item[1] }}"
+  with_nested:
+  - downloads.results
+  - item.files
