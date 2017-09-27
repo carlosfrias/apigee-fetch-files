@@ -27,7 +27,7 @@
   include: download_files.yml
   with_items: "{{ downloads.results }}"
   loop_control:
-    label: "{{ item }}"
+    label: "{{ file_result }}"
     loop_var: file_result
 
 
