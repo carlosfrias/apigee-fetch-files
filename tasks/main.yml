@@ -26,5 +26,5 @@
 - name: Iterate over files found
   include: download_files.yml
   vars:
-    file_result: "{{ item }}"
-  with_items: "{{ downloads.results }}"
+    download_set: "{{ item }}"
+  with_items: "{{ downloads }}"
