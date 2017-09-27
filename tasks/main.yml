@@ -24,7 +24,7 @@
   with_items: "{{ downloads.results }}"
 
 - name: Include echo.yml
-  include: echo.yml
+  import: echo.yml
   vars:
     download_set: "{{ item }}"
   with_nested:
