@@ -24,10 +24,11 @@
   with_items: "{{ downloads.results }}"
 
 - name: Iterate over files found
-  include: download_file.yml
-  vars:
-    result: "{{ item }}"
+  include: download_files.yml
   with_items: "{{ downloads.results }}"
+  loop_control:
+    label: "{{ item }}"
+    loop_var: file_result
 
 
 

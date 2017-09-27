@@ -6,11 +6,10 @@
 
 - name: Examine result passed in
   debug:
-    var: result.files
+    var: file_result.files
 
 - name: Download files
   fetch:
     src: "{{ item.path }}"
     dest: "{{ download_folder }}"
-  with_items: "{{ result.files }}"
-  when: result is defined
+  with_items: file_result.files
