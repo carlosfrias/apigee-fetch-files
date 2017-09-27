@@ -18,9 +18,9 @@
   with_items: "{{ download_pattern }}"
   register: downloads
 
-- name: Examine downloads collection assembled
+- name: Files matched
   debug:
-    msg: "Showing files result: {{ item.files }}"
+    msg: "Count Files Matched: {{ item.matched }}"
   with_items: "{{ downloads.results }}"
 
 - name: Iterate over files found
