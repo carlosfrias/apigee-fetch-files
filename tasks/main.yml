@@ -21,8 +21,8 @@
 - name: Examine downloads.results collection assembled
   debug:
     msg: "Showing result: {{ item }}"
-  with_items: downloads.results
-#
+  with_items: "{{ downloads.results }}"
+
 #- name: Iterate over patterns found
 #  include: download_files.yml
 #  var:
