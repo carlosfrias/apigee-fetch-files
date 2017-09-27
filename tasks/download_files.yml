@@ -10,4 +10,3 @@
     dest: "{{ download_folder }}"
   with_items: "{{ files }}"
   when: files is defined
-

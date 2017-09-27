@@ -1,0 +1,5 @@
+---
+- name: Download a single file
+  fetch:
+    src: "{{ file.path }}"
+    dest: "{{ download_folder }}"
