@@ -1,0 +1,4 @@
+---
+- name: Echo Hello
+  debug:
+    msg: "Hello from included echo.yml file"

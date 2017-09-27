@@ -23,6 +23,9 @@
     msg: "Count Files Matched: {{ item.matched }}"
   with_items: "{{ downloads.results }}"
 
+- name: Include echo.yml
+  include: echo.yml
+
 #- name: Iterate over files found
 #  include: ./download_files.yml
 #  vars:
