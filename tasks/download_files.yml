@@ -4,13 +4,13 @@
     msg: "Please specify a local download folder: -e download_folder=<local download folder>"
   when: download_folder is not defined
 
-- name: Examine files passed in
+- name: Examine result passed in
   debug:
-    var: files
+    var: result
 
 - name: Download files
   fetch:
     src: "{{ item.path }}"
     dest: "{{ download_folder }}"
-  with_items: "{{ files }}"
-  when: files is defined
+  with_items: "{{ result }}"
+  when: result is defined
