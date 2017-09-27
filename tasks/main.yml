@@ -20,13 +20,14 @@
 
 - name: Examine downloads.results collection assembled
   debug:
-    var: downloads.results
-
-- name: Iterate over patterns found
-  include: download_files.yml
-  var:
-    result: "{{ item }}"
+    msg: "Showing result: {{ item }}"
   with_items: downloads.results
+#
+#- name: Iterate over patterns found
+#  include: download_files.yml
+#  var:
+#    result: "{{ item }}"
+#  with_items: downloads.results
 
 
 
