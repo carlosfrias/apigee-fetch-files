@@ -29,4 +29,4 @@
     download_set: "{{ item[1] }}"
   with_nested:
   - downloads.results
-  - item.files
+  - item[0].files
