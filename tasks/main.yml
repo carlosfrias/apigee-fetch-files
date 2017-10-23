@@ -18,7 +18,7 @@
   with_items: "{{ download_pattern }}"
   register: downloads
 
-- name: Files matched
+- name: Report Files matched
   debug:
     msg: "Count Files Matched: {{ item.matched }}"
   with_items: "{{ downloads.results }}"
