@@ -36,4 +36,4 @@
   with_subelements:
   - "{{ downloads}}"
   - results
-  - files
+  - files, skip_missing: true
