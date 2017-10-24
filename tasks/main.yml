@@ -30,11 +30,10 @@
 #    loop_var: download_set
 
 - name: Download files
-  skip_missing: true
   fetch:
     src: "{{ item.2.path }}"
     dest: "{{ download_folder }}"
   with_subelements:
   - downloads
   - results
-  - files
+  - files, skip_missing: true
