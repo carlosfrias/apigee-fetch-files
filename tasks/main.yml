@@ -35,5 +35,5 @@
     dest: "{{ download_folder }}"
   with_subelements:
   - "{{ downloads }}"
-  - results
+  - " {{ results }}"
   - files, skip_missing: true
