@@ -12,5 +12,5 @@
   fetch:
     src: "{{ item.path }}"
     dest: "{{ download_folder }}"
-  with_items: "{{ download_set.files }}"
+  with_items: "{{ download_set }}"
   when: download_set.files | length > 0
