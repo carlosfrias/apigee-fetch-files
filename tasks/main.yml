@@ -31,8 +31,8 @@
 
 - name: Download files
   fetch:
-    src: "{{ item.1.path }}"
+    src: "{{ item.1 }}"
     dest: "{{ download_folder }}"
   with_subelements:
   - "{{ downloads.results }}"
-  - files, skip_missing: true
+  - files.path, skip_missing: true
