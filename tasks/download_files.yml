@@ -6,11 +6,11 @@
 
 - name: Examine download_set passed in
   debug:
-    var: download_set
+    var: "{{ download_set }}"
 
 - name: Download files
   fetch:
     src: "{{ item.path }}"
     dest: "{{ download_folder }}"
-  with_items: "{{ download_set }}"
+  with_items: "{{ download_set.files }}"
   when: download_set.files | length > 0
