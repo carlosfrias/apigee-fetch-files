@@ -10,7 +10,7 @@
 
 - name: Download files
   fetch:
-    src: "{{ item.path }}"
+    src: "{{ item.files }}"
     dest: "{{ download_folder }}"
-  with_items: "{{ download_set.files }}"
-  when: download_set.files | length > 0
+  with_items: "{{ download_set }}"
+  when: download_set | length > 0

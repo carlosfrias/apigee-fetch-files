@@ -22,9 +22,18 @@
   debug:
     msg: "Count Files Matched: {{ item.matched }}"
   with_items: "{{ downloads.results }}"
+#
+#- name: Iterate over files found
+#  include: download_files.yml
+#  with_items: downloads.results
+#  loop_control:
+#    loop_var: download_set
 
-- name: Iterate over files found
-  include: download_files.yml
-  with_items: downloads.results
-  loop_control:
-    loop_var: download_set
+- name: Download files
+  skip_missing: true
+  fetch:
+    src: "{{ item.1.files.path }}"
+    dest: "{{ download_folder }}"
+  with_subelements:
+  - "{{ downloads.results }}"
+  - files
