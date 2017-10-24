@@ -34,6 +34,6 @@
     src: "{{ item.2.path }}"
     dest: "{{ download_folder }}"
   with_subelements:
-  - downloads
+  - "{{ downloads }}"
   - results
   - files, skip_missing: true
