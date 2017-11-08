@@ -14,6 +14,7 @@
     path: '{{ item.dir }}'
     pattern: '{{ item.pattern }}'
     file_type: file
+    hidden: yes
     recurse: yes
   with_items: "{{ download_pattern }}"
   register: downloads
