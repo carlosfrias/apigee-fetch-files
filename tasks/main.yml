@@ -7,7 +7,10 @@
 
 - name: Create download folder
   become: no
-  local_action: file path={{ download_folder }} state=directory
+  file:
+    path: "{{ download_folder }}"
+    state: directory
+  delegate_to: 127.0.0.1
 
 - name: Determine that download folder exists
   stat:
