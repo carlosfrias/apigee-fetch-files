@@ -9,6 +9,17 @@
   become: no
   local_action: file path={{ download_folder }} state=directory
 
+- name: Determine that download folder exists
+  stat:
+    path: "{{ download_folder }}"
+  register: folder_state
+
+- name: Assert that download folder exists
+  assert:
+    that:
+    - folder_state.stat.exists is true
+    msg: "Download folder to store fetched files does not exists, please create the folder"
+
 - name: Find download log files
   find:
     path: '{{ item.dir }}'
