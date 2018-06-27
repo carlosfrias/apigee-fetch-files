@@ -12,6 +12,7 @@
 - name: Determine that download folder exists
   stat:
     path: "{{ download_folder }}"
+  delegate_to: 127.0.0.1
   register: folder_state
 
 - name: Assert that download folder exists
