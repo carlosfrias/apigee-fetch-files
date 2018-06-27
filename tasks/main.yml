@@ -17,7 +17,7 @@
 - name: Assert that download folder exists
   assert:
     that:
-    - folder_state.stat.exists is true
+    - folder_state.stat.exists == true
     msg: "Download folder to store fetched files does not exists, please create the folder"
 
 - name: Find download log files
