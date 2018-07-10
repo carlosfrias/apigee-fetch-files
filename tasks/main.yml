@@ -18,7 +18,7 @@
   delegate_to: 127.0.0.1
   register: folder_state
 
-- name: Assert that download folder exists
+- name: Assert the state of the download folder
   assert:
     that:
     - folder_state.stat.exists == true
