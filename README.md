@@ -42,7 +42,7 @@ None
 
     - hosts: servers
       roles: 
-        - { role: apigee-fetch-files, download_pattern: '{{ pattern }}', download_folder: "~/apigee/planet_logs" }
+        - { role: apigee-fetch-files, download_pattern: '{{ pattern }}', download_folder: "~/.apigee/planet_logs" }
 
 # License
 
