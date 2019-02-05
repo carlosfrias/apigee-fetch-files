@@ -17,11 +17,11 @@ The `download_pattern` collection should be structured in the following way:
 
      pattern:
         - { dir: '/tmp', pattern: 'setup*.log' }
-        - { dir: '{{ opdk_installer_path }}/', pattern: '*' }
-        - { dir: '{{ opdk_installer_path }}/', pattern: '*.log' }
-        - { dir: '{{ opdk_installer_path }}/', pattern: '*.txt' }
-        - { dir: '{{ opdk_installer_path }}/', pattern: '*.conf' }
-        - { dir: '{{ opdk_installer_path }}/', pattern: '*.sh' }
+        - { dir: '{{ opdk_resources_path }}/', pattern: '*' }
+        - { dir: '{{ opdk_resources_path }}/', pattern: '*.log' }
+        - { dir: '{{ opdk_resources_path }}/', pattern: '*.txt' }
+        - { dir: '{{ opdk_resources_path }}/', pattern: '*.conf' }
+        - { dir: '{{ opdk_resources_path }}/', pattern: '*.sh' }
         - { dir: '{{ apigee_home }}/', pattern: '*.out' }
         - { dir: '{{ apigee_home }}/var/log', pattern: '*.log' }
         - { dir: '{{ apigee_home }}/customer/', pattern: '*' }
