@@ -2,7 +2,7 @@
 # tasks file for fetch-found-files
 - name: Validate that we have download_pattern
   fail:
-    msg: "Please provide a download_pattern list that follows dir: 'directory name', pattern: 'file pattern'"
+    msg: "Please provide a download_pattern list that follows dir: { dir: '/tmp', pattern: 'setup-*.log' } "
   when: download_pattern is not defined
 
 - name: Create download folder
