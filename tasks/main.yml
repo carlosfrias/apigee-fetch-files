@@ -34,10 +34,23 @@
   with_items: "{{ download_pattern }}"
   register: downloads
 
-- name: Download files
-  fetch:
-    src: "{{ item.1.path }}"
-    dest: "{{ download_folder }}"
-  with_subelements:
-  - "{{ downloads.results }}"
-  - files
+- block:
+
+  - name: Download files
+    fetch:
+      src: "{{ item.1.path }}"
+      dest: "{{ download_folder }}"
+    with_subelements:
+    - "{{ downloads.results }}"
+    - files
+
+  rescue:
+
+    - name: Download files
+      become: true
+      fetch:
+        src: "{{ item.1.path }}"
+        dest: "{{ download_folder }}"
+      with_subelements:
+        - "{{ downloads.results }}"
+        - files
