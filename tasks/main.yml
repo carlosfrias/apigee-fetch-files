@@ -46,6 +46,10 @@
 
   rescue:
 
+    - name: Explaind this rescue
+      debug:
+        msg: "Assuming the fetch failed due to lack of privilege, attempting to fetch with sudo"
+
     - name: Download files
       become: true
       fetch:
